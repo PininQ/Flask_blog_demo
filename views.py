@@ -86,7 +86,7 @@ def change_name(name):
     # 获取后缀名
     info = os.path.splitext(name)
     # 文件名：时间格式字符串+唯一字符串+后缀名
-    name = datetime.now().strftime('%Y%M%D%H%M%S') + str(uuid.uuid4().hex) + info[-1]
+    name = datetime.now().strftime('%Y%m%d%H%M%S') + str(uuid.uuid4().hex) + info[-1]
     return name
 
 

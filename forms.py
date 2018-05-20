@@ -101,7 +101,7 @@ class RegisterForm(FlaskForm):
         if user > 0:
             raise ValidationError(u'账号已存在')
 
-    # 自定义验证码验证规则
+    # 自定义验证码验证规则: validate 下划线 字段名
     def validate_captcha(self, field):
         captcha = field.data
         if not form_session['captcha']:
@@ -151,7 +151,7 @@ class ArticleAddForm(FlaskForm):
         ],
         description=u'内容',
         render_kw={
-            'style': 'height: 300px',
+            'style': 'height: 300px;',
             'id': 'content'
         }
     )
