@@ -139,12 +139,13 @@ def blog_edit(id):
     if form.validate_on_submit():
         data = form.data
         # 上传logo
-        file = secure_filename(form.logo.data.filename)
+        # print('打印———>' + form.logo.data)
+        file = secure_filename(form.logo.data)
         logo = change_name(file)
         if not os.path.exists(app.config['uploads']):
             os.makedirs(app.config['uploads'])
         # 保存文件
-        form.logo.data.save(app.config['uploads'] + '/' + logo)
+        # form.logo.data.save(app.config['uploads'] + '/' + logo)
         article.logo = logo
         article.title = data['title']
         article.content = data['content']
