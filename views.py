@@ -129,6 +129,7 @@ def blog_add():
 @user_login_req
 def blog_edit(id):
     form = ArticleEditForm()
+    # 返回指定主键对应的行,如果没找到指定的主键,则终止请求,返回 404 错误响应
     article = Article.query.get_or_404(int(id))
     if request.method == 'GET':
         form.content.data = article.content

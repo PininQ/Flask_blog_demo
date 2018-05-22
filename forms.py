@@ -186,7 +186,7 @@ class ArticleEditForm(FlaskForm):
             DataRequired(u'分类不能为空')
         ],
         description=u'分类',
-        choices=[(1, u'科技'), (1, u'搞笑'), (1, u'新闻')],
+        choices=[(1, u'Python'), (2, u'MongoDB'), (3, u'Redis')],
         default=3,
         coerce=int,
         render_kw={
